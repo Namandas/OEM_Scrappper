@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# VulnDB Frontend
 
-## Getting Started
+This is the frontend application for VulnDB, built using Next.js. It interacts with the VulnDB backend API to provide a user-friendly interface for querying and managing security vulnerabilities scraped from various vendors.
 
-First, run the development server:
+## Built by Team Divya Utsav (Team ID 5568) for Smart India Hackathon 2024
+Website Link : [VulnDB](https://oem-scrappper.vercel.app/)
+Backend: [VulnDB Backend](https://github.com/Imyr/vulndb)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Table of Contents
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Endpoints](#api-endpoints)
+- [License](#license)
+- [Disclaimer](#disclaimer)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Vendor List**: Displays a list of vendors from which vulnerabilities are scraped.
+- **Vulnerability Queries**: Allows querying vulnerabilities based on vendor and limit.
+- **Vulnerability Updates**: Provides functionality to trigger vulnerability data updates.
+- **Responsive Design**: Optimized for desktop and mobile views.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Technologies Used
 
-## Learn More
+- Next.js
+- React
+- Tailwind CSS
+- Axios (for API calls)
+- MongoDB (for backend storage)
+- FastAPI (for backend API)
 
-To learn more about Next.js, take a look at the following resources:
+## Installation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clone the repository:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+    ```bash
+    git clone https://github.com/Namandas/OEM_Scrappper.git
+    cd OEM_Scrappper
+    ```
 
-## Deploy on Vercel
+2. Install the dependencies:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    ```bash
+    npm install
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. Set up your environment variables:
+
+    Create a `.env.local` file in the project root directory with the following content:
+
+    ```bash
+    NEXT_PUBLIC_API_URL=http://localhost:3000
+    ```
+
+4. Run the development server:
+
+    ```bash
+    npm run dev
+    ```
+
+    The application will start at `http://localhost:3000`.
+
+## Usage
+
+Once the application is running, you can access the frontend to query vulnerabilities and view available vendors.
+
+### Example
+
+- **View available vendors**: Visit the `/vendors` page to see the list of vendors.
+- **Query vulnerabilities**: Use the `/vulnerabilities` page to search vulnerabilities by vendor.
+
+## API Endpoints
+
+The frontend interacts with the following API endpoints from the VulnDB backend:
+
+- `GET /available_vendors`: Lists all vendors.
+- `POST /vulnerabilities/list`: Queries vulnerabilities based on the vendor and limit.
+- `GET /vulnerabilities/update`: Updates the database with new vulnerabilities.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+## Disclaimer
+
+This repository is for research purposes only. The use of this code is your responsibility. I take no responsibility and/or liability for how you choose to use any of the code available here. By using any of the files available here, you understand that you are agreeing to use at your own risk. Once again, all files available in this repository are for educational and/or research purposes only.
